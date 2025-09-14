@@ -1,0 +1,238 @@
+[
+  {
+    "id": "aufgabe_1a",
+    "frage": "Geben Sie eine lineare Differentialgleichung an, die die Fundamentallösung y(x) = e^(-2x) besitzt.",
+    "loesungsschritte": [
+      "Die Lösung y(x) = e^(λx) erfüllt die Differentialgleichung y' = λy.",
+      "Vergleich λ = -2 → y'(x) = -2y(x)."
+    ],
+    "basetruth": "y'(x) = -2y(x)",
+    "keywords": ["Differentialgleichung", "Fundamentallösung", "linear", "Differentialgleichung lösen"]
+  },
+  {
+    "id": "aufgabe_1b",
+    "frage": "Bei welchen Störfunktionen r(x) tritt bei der Differentialgleichung y'' + 9y = r(x) Resonanz auf?",
+    "loesungsschritte": [
+      "Eigenwert der homogenen DGL: λ = 3.",
+      "Prüfe, welche Störfunktion denselben Eigenwert hat.",
+      "cos(3x) stimmt überein mit λ = 3."
+    ],
+    "basetruth": "r(x) = cos(3x)",
+    "keywords": ["Resonanz", "Störfunktion", "Eigenwerte", "Differentialgleichung"]
+  },
+  {
+    "id": "aufgabe_1c",
+    "frage": "Welche der vier Abbildungen zeigt das richtige Phasenporträt der Zustände z1(t) und z2(t)?",
+    "loesungsschritte": [
+      "Auswertung der gegebenen Zeitverläufe von z1(t) und z2(t).",
+      "Analyse der Amplitudenbereiche: z1 schwankt zwischen 0 und 2.",
+      "Die Spirale endet in der Nähe von (1|0).",
+      "Abbildung (B) entspricht diesem Verhalten."
+    ],
+    "basetruth": "Abbildung (B)",
+    "keywords": ["Phasenporträt", "Differentialgleichungssystem", "Zustandsgleichungen"]
+  },
+  {
+    "id": "aufgabe_1d",
+    "frage": "Beurteilen Sie die Berechnungen von ChatGPT 3.5 für das Anfangswertproblem x'·x = t, x(0) = 1; Die schritte von ChatGPT: 1.Trennen die Variablen: dx/x = t*dt; 2.Integriere beide Seiten: ∫dx/x = ∫t*dt -> ln|x| = ((t^2)/2)+C; 3.Löse nach x auf: |x| = e^(((t^2)/2)+C); Da x(0)=1, setzen wir t=0 und lösen für C: |1| = e^C -> C = 0; 4.Setze C ein und berücksichtige das Betragzeichen: |x| = e^((t^2)/2) -> x = ±e^((t^2)/2); Da x(0) = 1, wählen wir das positve vorzeichen: x(t) = e^((t^2)/2)",
+    "loesungsschritte": [
+      "Die Umformung dx/x = t dt ist falsch, da x·dx/dt = t.",
+      "Korrekte Trennung: x dx = t dt.",
+      "Integration: ∫x dx = ∫t dt → 0.5 x² = 0.5 t² + C.",
+      "Lösung: x(t) = ±√(t² + 2C); Anfangswert verwenden, um C zu bestimmen."
+    ],
+    "basetruth": "Fehler bei der Variablentrennung: x·dx/dt = t ⇒ ∫x dx = ∫t dt",
+    "keywords": ["Anfangswertproblem", "Trennung der Variablen", "Differentialgleichung"]
+  },
+  {
+    "id": "aufgabe_2a",
+    "frage": "Handelt es sich bei der Differentialgleichung y'(x) · y(x) = sin(x) um eine lineare oder nichtlineare Differentialgleichung?",
+    "loesungsschritte": [
+      "Die Gleichung enthält das Produkt y'(x) · y(x), was nicht der Form einer linearen DGL entspricht.",
+      "Lineare DGL haben die Form: y' + p(x)y = q(x).",
+      "Hier liegt eine Nichtlinearität vor durch das Produkt y*y'."
+    ],
+    "basetruth": "Nichtlineare Differentialgleichung",
+    "keywords": ["Differentialgleichung", "linear", "nichtlinear"]
+  },
+  {
+    "id": "aufgabe_2b",
+    "frage": "Bestimmen Sie die exakte Lösung des Anfangswertproblems y'(x)·y(x) = sin(x), y(0) = -1.",
+    "loesungsschritte": [
+      "Trennung der Variablen: y dy = sin(x) dx",
+      "Integration: ∫y dy = ∫sin(x) dx ⇒ 0.5 y² = -cos(x) + C",
+      "Löse nach y(x): y(x) = ±√(2C - 2cos(x))",
+      "Einsetzen des Anfangswerts: y(0) = -1 ⇒ C = 3/2",
+      "Exakte Lösung: y(x) = -√(3 - 2cos(x))"
+    ],
+    "basetruth": "y(x) = -√(3 - 2cos(x))",
+    "keywords": ["Differentialgleichung", "Anfangswertproblem", "Trennung der Variablen"]
+  },
+  {
+    "id": "aufgabe_2c",
+    "frage": "Berechnen Sie einen Näherungswert für y(1) mit Euler-Verfahren (h = 0.5, zwei Schritte).",
+    "loesungsschritte": [
+      "x0 = 0, y0 = -1",
+      "1. Schritt: y1 = y0 + h * (sin(x0) / y0) = -1",
+      "x1 = 0.5",
+      "2. Schritt: y2 = y1 + h * (sin(0.5) / y1) ≈ -1.2397"
+    ],
+    "basetruth": "y(1) ≈ -1.2397",
+    "keywords": ["Euler-Verfahren", "Differentialgleichung", "Näherungswert"]
+  },
+  {
+    "id": "aufgabe_2d",
+    "frage": "Wie groß ist die Abweichung des näherungsweise berechneten y(1) vom exakten Wert?",
+    "loesungsschritte": [
+      "Exakte Lösung bei x=1: y(1) ≈ -1.3854",
+      "Näherungswert: y2 ≈ -1.2397",
+      "Abweichung: |y(1) - y2| ≈ 0.1457"
+    ],
+    "basetruth": "Abweichung ≈ 0.1457",
+    "keywords": ["Differentialgleichung", "Abweichung", "Euler-Verfahren"]
+  },
+  {
+    "id": "aufgabe_3a",
+    "frage": "Bestimmen Sie die allgemeine Lösung des Differentialgleichungssystems: ẋ = -2x + 3y, ẏ = 10x - 3y.",
+    "loesungsschritte": [
+      "System in Matrixform schreiben: [ẋ, ẏ] = A*[x, y]  mit A = [[-2, 3], [10, -3]]",
+      "Charakteristische Gleichung: |[[-2-λ, 3],[10, -3-λ]]| = λ² + 5λ - 24 = 0",
+      "Eigenwerte: λ1 = -8, λ2 = 3",
+      "Eigenvektoren bestimmen zu λ1 und λ2: v1 = [1, -2], v2 = [3, 5] ",
+      "Lösungsform: x(t) = C1·e^(-8t)·v1 + C2·e^(3t)·v2 mit v1 = [1, -2], v2 = [3, 5]"
+    ],
+    "basetruth": "x(t) = C1·e^(-8t)·[1, -2] + C2·e^(3t)·[3, 5]",
+    "keywords": ["Differentialgleichungssystem", "Linear", "Eigenwerte", "Allgemeine Lösung"]
+  },
+  {
+    "id": "aufgabe_3b",
+    "frage": "Ist das Differentialgleichungssystem asymptotisch stabil?",
+    "loesungsschritte": [
+      "Asymptotische Stabilität setzt voraus, dass alle Eigenwerte negativen Realteil haben.",
+      "Eigenwerte: λ1 = -8, λ2 = 3",
+      "Da λ2 > 0, ist das System nicht asymptotisch stabil."
+    ],
+    "basetruth": "Nein, das System ist nicht asymptotisch stabil.",
+    "keywords": ["Differentialgleichungssystem", "Stabilität", "Eigenwerte", "Asymptotisch stabil"]
+  },
+  {
+    "id": "aufgabe_4a",
+    "frage": "Berechnen Sie die Werte x₁ und x₂ für die Differenzengleichung 20xₖ₊₁ − 21xₖ = −200 mit x₀ = 100.",
+    "loesungsschritte": [
+      "Umstellen der Differenzengleichung: xₖ₊₁ = (21/20)xₖ − 10",
+      "Einsetzen von x₀ = 100: x₁ = (21/20)*100 − 10 = 95",
+      "Einsetzen von x₁ = 95: x₂ = (21/20)*95 − 10 = 89.75"
+    ],
+    "basetruth": "x₁ = 95, x₂ = 89.75",
+    "keywords": ["Differenzengleichung", "Rekursion", "Folge"]
+  },
+  {
+    "id": "aufgabe_4b",
+    "frage": "Bestimmen Sie die allgemeine Lösung der Differenzengleichung 20xₖ₊₁ − 21xₖ = −200 mit Anfangswert x₀ = 100.",
+    "loesungsschritte": [
+      "Homogene Lösung: λ = 21/20 ⇒ x_h(k) = C·(21/20)^k",
+      "Partikuläre Lösung: x_p(k) = A ⇒ 20A − 21A = −200 ⇒ A = 200",
+      "Allgemeine Lösung: x(k) = C·(21/20)^k + 200",
+      "Einsetzen von x₀ = 100 ⇒ 100 = C + 200 ⇒ C = −100",
+      "Endgültige Lösung: x(k) = −100·(21/20)^k + 200"
+    ],
+    "basetruth": "x(k) = −100·(21/20)^k + 200",
+    "keywords": ["Differenzengleichung", "Allgemeine Lösung", "Anfangswertproblem", "Homogene Lösung", "Partikuläre Lösung"]
+  },
+  {
+    "id": "aufgabe_4c",
+    "frage": "Interpretieren Sie die Zahlenfolge (xₖ) als Kontostand. Wie hoch sind Zinssatz und jährlicher Abhebungsbetrag, und wie oft kann abgehoben werden?",
+    "loesungsschritte": [
+      "Zinssatz: 21/20 − 1 = 1/20 = 5%",
+      "Jährlicher Abhebungsbetrag: 10",
+      "Grenzbedingung: xₖ = 0 ⇒ (21/20)^k = 2 ⇒ k ≈ ln(2)/ln(21/20) ≈ 14.2",
+      "Abhebung ist maximal 14 Mal möglich"
+    ],
+    "basetruth": "Zinssatz = 5%, Betrag = 10, maximal 14 Abhebungen möglich",
+    "keywords": ["Zinsrechnung", "Folge", "Differenzengleichung"]
+  },
+  {
+    "id": "aufgabe_5a",
+    "frage": "Geben Sie die Potenzreihen der Funktionen g(x) = e^x und h(x) = ln(1 + x) an der Stelle x₀ = 0 an und bestimmen Sie deren Konvergenzradien.",
+    "loesungsschritte": [
+      "g(x) = e^x = ∑ (x^k)/k! für k=0 bis ∞; Konvergenzradius = ∞",
+      "h(x) = ln(1 + x) = ∑ [(-1)^(k-1) * x^k]/k für k=1 bis ∞; Konvergenzradius = 1"
+    ],
+    "basetruth": "g(x): ∑ x^k/k!, R=∞; h(x): ∑ (-1)^(k-1) x^k/k, R=1",
+    "keywords": ["Potenzreihe", "Konvergenzradius", "Entwicklungsstelle"]
+  },
+  {
+    "id": "aufgabe_5b",
+    "frage": "Bestimmen Sie das Taylor-Polynom T₃ von Grad 3 der Funktion f(x) = e^x ln(1 + x) an der Stelle x₀ = 0 mithilfe der Potenzreihen.",
+    "loesungsschritte": [
+      "f(x) = g(x) * h(x) = (1 + x + x²/2 + x³/6)(x − x²/2 + x³/3)",
+      "Cauchy-Produkt bis Grad 3 berechnen",
+      "Ergebnis: T₃(x) = x + x²/2 + x³/3"
+    ],
+    "basetruth": "T₃(x) = x + x²/2 + x³/3",
+    "keywords": ["Taylor-Polynom", "Potenzreihe", "Cauchy-Produkt"]
+  },
+  {
+    "id": "aufgabe_5c",
+    "frage": "Berechnen Sie den Näherungswert Ĩ ≈ ∫₀¹ f(x) dx mithilfe des Taylor-Polynoms T₃.",
+    "loesungsschritte": [
+      "Integriere T₃(x): ∫₀¹ (x + x²/2 + x³/3) dx",
+      "Stammfunktionen: x²/2 + x³/6 + x⁴/12",
+      "Eingesetzt: 1/2 + 1/6 + 1/12 = 3/4"
+    ],
+    "basetruth": "Ĩ = 3/4",
+    "keywords": ["Integral", "Taylor-Polynom", "Näherungswert", "Potenzreihe"]
+  },
+  {
+    "id": "aufgabe_6a",
+    "frage": "Welche Periode T und Kreisfrequenz ω hat die dargestellte periodische Funktion f(t)?",
+    "loesungsschritte": [
+      "Aus dem Graphen ablesen: T = 2",
+      "Kreisfrequenz berechnen: ω = 2π / T = π"
+    ],
+    "basetruth": "T = 2, ω = π",
+    "keywords": ["Periode", "Kreisfrequenz", "Fourier", "Periodische Funktion"]
+  },
+  {
+    "id": "aufgabe_6b",
+    "frage": "Bestimmen Sie den Mittelwert m der Funktion f.",
+    "loesungsschritte": [
+      "Fläche über eine Periode berechnen: Fläche = 3",
+      "Mittelwert = Fläche / T = 3 / 2"
+    ],
+    "basetruth": "m = 3/2",
+    "keywords": ["Mittelwert", "Fourier", "Periodische Funktion"]
+  },
+  {
+    "id": "aufgabe_6c",
+    "frage": "Bewerten Sie die Aussagen zu den reellen Fourier-Koeffizienten ak und bk.",
+    "loesungsschritte": [
+      "ak = 0 für k > 0 ist korrekt.",
+      "bk = 0 für k > 0 ist falsch.",
+      "Begründung über Funktionseigenschaften (ungerade/gerade Anteile)."
+    ],
+    "basetruth": "ak = 0 ist richtig; bk = 0 ist falsch",
+    "keywords": ["Fourier", "Fourier-Koeffizienten", "reelle Fourier-Koeffizienten"]
+  },
+  {
+    "id": "aufgabe_6d",
+    "frage": "Berechnen Sie die allgemeine Formel für die komplexen Fourier-Koeffizienten ck.",
+    "loesungsschritte": [
+      "Integral über eine Periode: cₖ = 1/2 ∫₋₁¹ f(t)·e^(−i k π t) dt",
+      "Aufteilung in zwei Intervalle: [-1, 0] mit f(t)=1, [0, 1] mit f(t)=2",
+      "Einsetzen der Stammfunktionen und Auswertung mit e^(±i k π) = (−1)^k"
+    ],
+    "basetruth": "cₖ = i*[(−1)^k − 1] / (2kπ)",
+    "keywords": ["Fourier", "Fourier-Koeffizienten", "Komplexe Fourier-Koeffizienten"] 
+  },
+  {
+    "id": "aufgabe_6e",
+    "frage": "Geben Sie die Werte der komplexen Fourier-Koeffizienten c₁ und c₂ an.",
+    "loesungsschritte": [
+      "Für k=1: c₁ = i*[(−1) − 1]/(2·π) = [−1/(π)]*i",
+      "Für k=2: c₂ = i*[(1) − 1]/(4·π) = 0"
+    ],
+    "basetruth": "c₁ = [−1/(π)]*i, c₂ = 0",
+    "keywords": ["Fourier", "Komplexe Fourier-Koeffizienten", "Fourier-Koeffizienten"]
+  }
+]

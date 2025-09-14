@@ -1,0 +1,150 @@
+[
+  {
+    "id": "aufgabe_1a",
+    "frage": "Ordnen Sie den Differentialgleichungen die Richtungsfelder zu: (A) y' = -y, (B) y' = -x, (C) y' = y², (D) y' = x².",
+    "loesungsschritte": [
+      "Vergleiche jede Gleichung mit typischem Richtungsfeldverlauf.",
+      "(C) ist steigend bei positivem y, stärker als linear → passt zu y' = y².",
+      "(B) ist achsensymmetrisch → passt zu y' = -x.",
+      "(D) y' > 0 für alle x → wachsend → passt zu x².",
+      "(A) y' < 0 für y > 0 → fallend → passt zu -y."
+    ],
+    "basetruth": "(C) → C, (B) → B, (D) → D, (A) → A",
+    "keywords": ["Richtungsfeld", "Differentialgleichung"]
+  },
+  {
+    "id": "aufgabe_1b",
+    "frage": "Welche Differentialgleichungen sind linear? Gegeben ist y''+2y'+y=sin(x), y''+2y'+sin(y)=0, y''+2y'+sin(x)=0, y''+2y'+sin(x)y=0 ",
+    "loesungsschritte": [
+      "Linearität liegt vor, wenn keine nichtlinearen Terme in y auftreten.",
+      "sin(x) ist unabhängig von y → linear.",
+      "sin(y) macht die DGL nichtlinear.",
+      "Ein Produkt wie sin(x)·y ist ebenfalls linear (da y nur 1. Potenz)."
+    ],
+    "basetruth": "Die Gleichungen 1, 3 und 4 sind linear. Nur die mit sin(y) ist nichtlinear.",
+    "keywords": ["Linear", "Differentialgleichung", "Nichtlinear"]
+  },
+  {
+    "id": "aufgabe_1c",
+    "frage": "Stellen Sie die Differentialgleichung w''(x)/((1 + z2²)^(3/2))=-My(x)/(E Iy) mit Zustandsgleichungen als System erster Ordnung dar.",
+    "loesungsschritte": [
+      "Setze z1 = w(x), z2 = w'(x).",
+      "Dann gilt: z1' = z2.",
+      "Die zweite Gleichung ergibt sich durch Umformung der DGL: z2' = -My(x)/(E Iy)·(1 + z2²)^(3/2)"
+    ],
+    "basetruth": "z1' = z2, z2' = -My(x)/(E Iy)·(1 + z2²)^(3/2)",
+    "keywords": ["Differentialgleichung", "Zustandsgleichungen"]
+  },
+  {
+    "id": "aufgabe_1d",
+    "frage": "Korrigieren Sie die fehlerhafte Antwort von ChatGPT zur Teich-Wasser-Differenzengleichung.  Die Antwort lautete:Zuerst berechnen wir die tägliche Verdunstungsmenge: 2% von 1000 Litern sind 20 Liter. Da täglich 10 Liter Wasser nachgefüllt werden, verringert sich die Wasser standsmenge um 10 Liter- 20 Liter =-10 Liter pro Tag. Nach 2 Tagen würde sich die Wassermenge im Teich um-10 Liter * 2Tage =-20 Liter verringern. Da der Wasser verlust die Nachfüllung übersteigt,enthält derTeichnach 2 Tagen kein Wasser mehr.",
+    "loesungsschritte": [
+      "Modell: T(k+1) = 0.98·T(k) + 10, T(0) = 1000",
+      "T1 = 0.98·1000 + 10 = 990",
+      "T2 = 0.98·990 + 10 = 980.2"
+    ],
+    "basetruth": "Nach 2 Tagen: T2 = 980.2 Liter",
+    "keywords": ["Differenzengleichung", "Rekursion"]
+  },
+  {
+    "id": "aufgabe_1e",
+    "frage": "Welchen Grenzwert hat die Reihe ∑_{k=2}^{∞} (1/3)^k ?",
+    "loesungsschritte": [
+      "Geometrische Reihe: ∑_{k=0}^{∞} (1/3)^k = 1 / (1 - 1/3) = 3/2",
+      "Subtrahiere Anfangsglieder k=0 und k=1: 1 + 1/3 = 4/3",
+      "S = 3/2 - 4/3 = 1/6"
+    ],
+    "basetruth": "S = 1/6",
+    "keywords": ["Reihe", "Grenzwert", "Geometrische Reihe"]
+  },
+  {
+    "id": "aufgabe_2",
+    "frage": "Lösen Sie das Anfangswertproblem y' = (y + 1)·cos(x), y(0) = 1.",
+    "loesungsschritte": [
+      "Trennung: dy / (y + 1) = cos(x) dx",
+      "ln|y + 1| = sin(x) + C → y + 1 = C·e^{sin(x)}",
+      "Einsetzen: y(0) = 1 ⇒ 2 = C ⇒ y(x) = 2·e^{sin(x)} - 1"
+    ],
+    "basetruth": "y(x) = 2·e^{sin(x)} - 1",
+    "keywords": ["Anfangswertproblem", "Trennung der Variablen", "Differentialgleichung"]
+  },
+  {
+    "id": "aufgabe_2_euler",
+    "frage": "Bestimmen Sie ỹ(0.1) von y' = (y + 1)·cos(x), y(0) = 1 mit Euler-Verfahren (h = 0.1), Anfangswert y(0) = 1.",
+    "loesungsschritte": [
+      "f(x,y) = (y + 1)·cos(x), h = 0.1",
+      "ỹ1 = y0 + h·f(x0,y0) = 1 + 0.1·2 = 1.2"
+    ],
+    "basetruth": "ỹ(0.1) = 1.2",
+    "keywords": ["Euler-Verfahren", "Euler-Polygonzugverfahren", "Näherungswert", "Differentialgleichung"]
+  },
+  {
+    "id": "aufgabe_2_abweichung",
+    "frage": "Wie groß ist die Abweichung zwischen ỹ(0.1)=1.2 und dem exakten Wert für y(0.1) von y' = (y + 1)·cos(x), y(0) = 1?",
+    "loesungsschritte": [
+      "Exakte Lösung: y(0.1) = 2·e^{sin(0.1)} - 1 ≈ 1.20997",
+      "Abweichung: 1.20997 - 1.2 ≈ 0.00997"
+    ],
+    "basetruth": "≈ 0.00997",
+    "keywords": ["Euler-Verfahren", "Abweichung", "Näherungswert"]
+  },
+  {
+    "id": "aufgabe_3",
+    "frage": "Bestimmen Sie die allgemeine reelle Lösung von y'' + 4y = 3cos(2x)",
+    "loesungsschritte": [
+      "Charakteristische Gleichung: λ² + 4 = 0 → λ = ±2i",
+      "Homogene Lösung: yh(x) = C1·cos(2x) + C2·sin(2x)",
+      "Partikulärer Resonanzansatz: yp(x) = x(A cos(2x) + B sin(2x))",
+      "Einsetzen und Koeffizientenvergleich: A = 0, B = 3/4"
+    ],
+    "basetruth": "y(x) = C1·cos(2x) + C2·sin(2x) + (3/4)x·sin(2x)",
+    "keywords": ["Differentialgleichung", "Allgemeine Lösung", "Resonanz", "Partikuläre Lösung", "Homogene Lösung"]
+  },
+  {
+    "id": "aufgabe_4",
+    "frage": "Gegeben ist: xₖ₊₁ = -2xₖ + 3yₖ, yₖ₊₁ = 2xₖ + 3yₖ. Bestimme die Lösung.",
+    "loesungsschritte": [
+      "Matrix A = [[-2,3],[2,3]], Eigenwerte: λ1=4, λ2=−3",
+      "Eigenvektoren: v1=[1,2], v2=[3,−1]",
+      "Allg. Lösung: xₖ,yₖ = C1·4^k·[1,2] + C2·(−3)^k·[3,−1]"
+    ],
+    "basetruth": "[xₖ, yₖ] = C1·4^k·[1,2] + C2·(−3)^k·[3,−1]",
+    "keywords": ["Differenzengleichung", "Differenzengleichungssystem", "Eigenwert"]
+  },
+  {
+    "id": "aufgabe_4b",
+    "frage": "Ist das System xₖ₊₁ = -2xₖ + 3yₖ, yₖ₊₁ = 2xₖ + 3yₖ asymptotisch stabil?",
+    "loesungsschritte": [
+      "Bedingung: |λ| < 1 für alle Eigenwerte",
+      "Hier: λ1 = 4, λ2 = −3 ⇒ |λ| > 1",
+      "⇒ System ist nicht asymptotisch stabil"
+    ],
+    "basetruth": "Nein, nicht asymptotisch stabil.",
+    "keywords": ["Stabilität", "asymptotisch stabil", "Differenzengleichung", "Eigenwerte"]
+  },
+  {
+    "id": "aufgabe_5",
+    "frage": "Gegeben: f(x) = ln(1 + x)/x. Analysiere Potenzreihe, Konvergenzradius, Grenzwert, Näherung, Fehlerabschätzung mit Leibniz-Kriterium.",
+    "loesungsschritte": [
+      "a) Potenzreihe: ln(1+x) = ∑ (−1)^{k−1} x^k / k ⇒ f(x) = ∑ (−1)^{k−1} x^{k−1} / k",
+      "b) Konvergenzradius r = 1",
+      "c) lim x→0 f(x) = 1",
+      "d) Näherung I ≈ ∫₀¹ (1 − x/2 + x²/3) dx = 31/36",
+      "e) Fehler ≤ ∫₀¹ |−x³/4| dx = 1/16"
+    ],
+    "basetruth": "f(x) = ∑ (−1)^{k−1} x^{k−1} / k, Ĩ = 31/36, Fehler ≤ 1/16, Grenzwert = 1, Konvergenzradius r = 1",
+    "keywords": ["Potenzreihe", "Konvergenzradius", "Integral", "Grenzwert", "Leibniz-Kriterium", "Näherungswert"]
+  },
+  {
+    "id": "aufgabe_6",
+    "frage": "Gegeben: f(t) = e^{t/2} auf [−π, π), periodisch. Finde Fourier-Koeffizienten, Mittelwert, Gibbs.",
+    "loesungsschritte": [
+      "ck = 1/(2π) ∫_{−π}^{π} e^{t/2}·e^{−i k t} dt",
+      "ck = (−1)^k (e^{π/2} − e^{−π/2}) / (2π(1/2 − i k))",
+      "Mittelwert m = c₀ = (e^{π/2} − e^{−π/2}) / π ≈ 1.465",
+      "Gibbs-Phänomen bei t = π + 2π·k, Überschwingung ≈ ±0.41"
+    ],
+    "basetruth": "ck = (−1)^k (e^{π/2} − e^{−π/2}) / (2π(1/2 − i k)), m ≈ 1.465, Überschwingung ≈ ±0.41",
+    "keywords": ["Fourier-Reihe", "Periodische Funktion", "Mittelwert", "Gibbsche Phänomen", "Fourier-Koeffizienten", "komplexe Fourier-Koeffizienten"]
+  }
+]
