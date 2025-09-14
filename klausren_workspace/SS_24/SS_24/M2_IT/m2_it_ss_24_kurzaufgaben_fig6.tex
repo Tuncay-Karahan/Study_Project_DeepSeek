@@ -1,0 +1,24 @@
+\begin{tikzpicture}
+	\begin{axis}[
+		title={(D)},
+		xlabel={$z_1$},
+		ylabel={$z_2$},
+		xmin=-2.5, xmax=2.5,
+		ymin=-2.5, ymax=2.5,
+		grid=major,
+		domain=0:6,
+		samples=100,
+		width=5cm,
+		height=5cm,
+		xtick={-2, -1, 0, 1, 2},
+		ytick={-2, -1, 0, 1, 2}
+		]
+		\addplot [
+		black,
+		thick
+		] (
+		{1+\zzwei{x}},
+		{\zeins{x}-1}
+		);
+	\end{axis}
+\end{tikzpicture}

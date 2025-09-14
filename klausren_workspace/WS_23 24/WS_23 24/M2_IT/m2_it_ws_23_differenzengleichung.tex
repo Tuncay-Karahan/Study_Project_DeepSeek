@@ -1,0 +1,124 @@
+\begin{Aufgabe}[8] 
+	Eine Differenzengleichung erster Ordnung ist gegeben durch
+	\[
+		x_{k+1} = 1.05 \, x_k - 1, \quad x_0 = 10, \quad k = 0,1,2,3,\ldots . 
+	\]
+	\begin{enumerate}
+		\item
+			Geben Sie die Zahlenwerte von $x_1$ und $x_2$ an.
+		\item
+		  	Bestimmen Sie die Lösung der Differenzengleichung.
+		 \item
+		 	Für welche Indizes $k$ ist $x_k < 0$?  
+	\end{enumerate}
+	
+	\Loesung{}{
+		\begin{enumerate}
+			\item
+				Zahlenwerte:
+				\hfill\Punkte{1 P}
+				\[
+					x_0 = 1.05 \cdot 10 - 1 = 9.5, \quad x_1 = 1.05 \cdot 9.5 - 1 = 8.975
+				\]
+			\item
+				Lösungsformel:
+				\hfill\Punkte{1 P}
+				\[
+					x_{k+1} = \lambda \, x_k + r_k
+					\quad \Longrightarrow \quad
+					x_k = \lambda^k \cdot x_0 + \sum_{l=0}^{k-1} \lambda^{k-1-l} r_l \, .
+				\]
+				$\lambda = 1.05$, $r_k = -1$, $x_0 = 1$:
+				\hfill\Punkte{1 P}
+				\[
+					x_k = 1.05^k \cdot 10 + \sum_{l=0}^{k-1}1.05^{k-1-l} \cdot (-1) \, .
+				\]
+				Geometrische Reihe:
+				\hfill\Punkte{1 P}
+				\[
+					x_k =
+					1.05^k \cdot 10 - \frac{1 - 1.05^k}{1 - 1.05} \, .
+				\]
+				Vereinfachung:
+				\hfill\Punkte{1 P}
+				\[
+					x_k =
+					10 \cdot 1.05^k  - \frac{1 - 1.05^k}{- 0.05} =
+					10 \cdot 1.05^k  + 20 - 20 \cdot 1.05^k =
+					- 10 \cdot 1.05^k  + 20\, .
+				\]
+			\item
+				Bedingung $x_k < 0$:
+				\hfill\Punkte{1 P}
+				\[
+					- 10 \cdot 1.05^k  + 20 < 0
+					\quad \Longleftrightarrow \quad
+					20 < 10 \cdot 1.05^k
+					\quad \Longleftrightarrow \quad
+					2 < 1.05^k \, .
+				\]
+				Nach $k$ auflösen:
+				\hfill\Punkte{1 P}
+				\[
+					\ln(2) < \ln\left((1.05)^k\right)
+					\quad \Longleftrightarrow \quad
+					\ln(2) < k \, \ln(1.05)
+					\quad \Longleftrightarrow \quad
+					k > \frac{\ln(2)}{\ln(1.05)} \approx 14.2
+				\]
+				Ab $k = 15$ sind alle Folgenglieder negativ.
+				\hfill\Punkte{1 P}
+		\end{enumerate}
+	}
+	
+	\newpage
+	
+	\Loesung{}{
+		Alternative Lösung für \textbf{b)}
+		\par
+		\vspace*{1cm}
+		\par
+		Homogene Lösung:
+		\[
+			x_{k+1} -1.05 \, x_k = 0
+			\quad \Longrightarrow \quad
+			\lambda - 1.05 = 0
+			\quad \Longrightarrow \quad
+			\lambda = 1.05
+			\quad \Longrightarrow \quad
+			x_k^h = C \cdot 1.05^k \, .
+		\]
+		Partikuläre Lösung
+		\[
+			x_k^p = A
+			\quad \Longrightarrow \quad
+			A - 1.05 \, A = - 1
+			\quad \Longrightarrow \quad
+			A ( 1 - 1.05 ) = -1
+			\quad \Longrightarrow \quad
+			A = \frac{-1}{-0.05} = 20 \, .
+		\]
+		Allgemeine Lösung:
+		\[
+			x_k = x_k^h + x_k^p = C \cdot 1.05^k + 20 \, .
+		\]
+		Anfangswert $x_0 = 10$: 
+		\[
+			k = 0: \quad 
+			x_0 = C \cdot 1.05^0 + 20 
+			\quad \Longrightarrow \quad
+			10 = C + 20
+			\quad \Longrightarrow \quad
+			C = -10 \, .
+		\]
+		Ergebnis:
+		\[
+			x_k = -10 \cdot 1.05^k + 20 \, .
+		\]
+	}
+	
+\end{Aufgabe} 
+
+\newpage
+
+\endinput

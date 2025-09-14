@@ -1,0 +1,80 @@
+\begin{Aufgabe}[9]% SS 18
+	Gegeben ist die Funktion $f$ mit
+	\[
+		f(x) = \e^{-x^2} \, .
+	\]
+	\begin{enumerate}
+		\item
+			Entwickeln Sie die Funktion $f$ in eine Potenzreihe um die Entwicklungsstelle $x_0 = 0$.
+			Für welche $x$ Werte konvergiert die Reihe?
+		\item
+			Berechnen Sie einen Näherungswert $\tilde{I}$ für das bestimmte Integral
+			\[
+				I = \int_0^{1} \, f(x) \, \mbox{d} \, x
+			\]
+			mithilfe der Potenzreihe mit den Gliedern bis zur Ordnung $4$.
+			Schätzen Sie die maximale Abweichung 
+			\mbox{$| I - \tilde{I} |$}
+			des Näherungswertes $\tilde{I}$ vom exakten Wert $I$ mit dem Leibniz-Kriterium ab.
+		\item
+			Geben Sie eine Formel für $f^{(n)}(0)$ an, d.h. für die $n$-te Ableitung der Funktion $f$ an der Stelle $x=0$.
+			Unterscheiden Sie dabei die Fälle für gerades und ungerades $k$.
+	\end{enumerate}
+	
+	\Loesung{}{
+		\begin{enumerate}
+			\item
+			Potenzreihenentwicklung konvergiert für alle reellen Zahlen
+			\hfill\Punkte{2 P}
+			\[
+			\mbox{e}^x = \sum_{k=0}^\infty  \frac{x^k}{k \, !} = 1 + x + \tfrac{x^2}{2!} + \tfrac{x^3}{3!} + \ldots
+			\quad \Longrightarrow \quad
+			f(x) = \sum_{k=0}^\infty  \frac{(-x^2)^k}{k \, !}  = 1 - x^2 + \tfrac{x^4}{2} - \tfrac{x^6}{6} \pm \ldots
+			\]
+			\item
+			Gliedweise Integration der Potenzreihenentwicklung 
+			\hfill\Punkte{3 P}
+			\[
+			\tilde{I}
+			= \int_0^1 \, 1 - x^2 + \tfrac{x^4}{2}  \, \mbox{d} \, x
+			= \left[ x - \tfrac{x^3}{3} + \tfrac{x^5}{10} \right]_0^1
+			= 1 - \tfrac{1}{3} + \tfrac{1}{10} = \tfrac{23}{30} \, .
+			\]
+			Abschätzung der maximalen Abweichung mit der Leibniz-Kriterium für alternierende Reihen:
+			\hfill\Punkte{2 P}
+			\begin{align*}
+				| I - \tilde{I} |
+				& = \left| \int_0^1 f(x)\mbox{d} \, x - \int_0^1 1-x^2+\frac{x^4}{2}\, \mbox{d} \, x \right|
+				= \left| \int_0^1 f(x) - \left(1-x^2+\frac{x^4}{2}\right) \, \mbox{d}\, x \right|\\
+				& \leq \int_0^1 \left|f(x) - \left(1-x^2+\frac{x^4}{2}\right)\right| \, \mbox{d}\, x 
+				\leq \int_0^1 \left|-\frac{x^6}{6} \right| \, \mbox{d} \, x 
+				= \left[ \frac{x^7}{7 \cdot 6} \right]_0^1
+				= \frac{1}{42} \, .
+			\end{align*}
+			\item
+			Formel für die Ableitung
+			\hfill\Punkte{2 P}
+			\[
+				f(x) = \sum_{k=0}^\infty \frac{(-1)^{k}}{k \, !} x^{2 \, k} 
+				\quad \Longrightarrow \quad 
+				\frac{f^{(2 \, k)}(0)}{(2 \, k)!} = \frac{(-1)^{k}}{k \, !}
+				\quad \Longrightarrow \quad 
+				\frac{f^{(n)}(0)}{n!} = \frac{(-1)^{n/2}}{(n/2) \, !} \mbox{ für $n$ gerade} \, .
+			\]
+			Für ungerade $n$ ist die $n$-te Ableitung null.
+		\end{enumerate}
+	}
+	
+	\newpage
+	
+	\ifLoesung
+	\else
+	\Loesung{}{}
+	\newpage
+	\fi	
+	
+\end{Aufgabe}
+
+\newpage
+
+\endinput

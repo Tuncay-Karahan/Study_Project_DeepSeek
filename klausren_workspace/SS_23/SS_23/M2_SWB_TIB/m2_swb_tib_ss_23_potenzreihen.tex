@@ -1,0 +1,87 @@
+\begin{Aufgabe}[8]% vgl. WS 17/18
+	Gegeben ist die Funktion $f$ mit 
+	\[
+		f(x)=\frac{1}{x}\ln(1+x) \, .
+	\]
+	\begin{enumerate}
+		\item
+			Geben Sie die Potenzreihe der Funktion $f$ an.
+		\item
+			Welchen Konvergenzradius $r$ hat die Potenzreihe aus Aufgabenteil \textbf{a)}.
+		\item
+			Bestimmen Sie den Grenzwert
+			\[
+				\lim_{x \to 0} f(x)
+			\]
+			mithilfe der Potenzreihe aus Aufgabenteil \textbf{a)}.
+		\item
+			Berechnen Sie einen Näherungswert $\tilde{I}$ für das bestimmte Integral
+			\[
+				I = \int_0^1 f(x) \, \mbox{d} \, x
+			\]
+			mithilfe der Potenzreihe aus Aufgabenteil \textbf{a)} mit allen Gliedern bis zur Ordnung $2$.
+		\item
+			Schätzen Sie die maximale Abweichung des Näherungswertes $\tilde{I}$ aus Aufgabenteil \textbf{d)} vom exakten Wert $I$ mithilfe des Leibniz-Kriteriums.
+	\end{enumerate}
+%
+%
+%
+\Loesung{}{
+	\begin{enumerate}[series=potenzreihen_loesung]
+		\item
+			Potenzreihe des Logarithmus:
+			\hfill\Punkte{2 P}
+			\[
+				\ln(1 + x)	=	\sum_{k=1}^{\infty}\frac{(-1)^{k-1}}{k}x^k = x-\frac{x^2}{2}+\frac{x^3}{3}-\frac{x^4}{4} \pm \ldots
+			\]
+			Potenzreihe von $f$:
+			\[
+				f(x)
+				= \frac{1}{x}  \sum_{k=1}^{\infty}\frac{(-1)^{k-1}}{k}x^k
+				= \sum_{k=1}^{\infty}\frac{(-1)^{k-1}}{k}x^{k-1}
+				= 1 - \frac{x}{2} + \frac{x^2}{3} - \frac{x^3}{4} \pm \ldots
+			\]
+		\item
+			Konvergenzradius $r=1$
+			\hfill\Punkte{1 P}
+		\item
+			Grenzwert:
+			\hfill\Punkte{1 P}
+			\[
+				\lim_{x\to 0} f(x) = \lim_{x\to 0} \left(1 - \frac{x}{2} + \frac{x^2}{3} - \frac{x^3}{4} \pm \ldots \right) = 1
+			\]
+	\end{enumerate}
+}
+
+\newpage
+
+\Loesung{}{
+	\begin{enumerate}[resume=potenzreihen_loesung]
+		\item
+			Gliedweise Integration der Potenzreihe:
+			\hfill\Punkte{2 P}
+			\[
+				\tilde{I}
+				\approx \int_0^1 \left( 1 - \frac{x}{2} + \frac{x^2}{3} \right) \, dx 
+				= \left[ x - \frac{x^2}{4} + \frac{x^3}{9} \right]_0^1
+			\]
+			Integrationsgrenzen:
+			\[
+				\tilde{I} = 1 - \frac{1}{4} + \frac{1}{9} = \frac{31}{36}
+			\]
+		\item
+			Die Glieder der Reihe bilden eine monotone Nullfolge, deshalb kann man die Abweichung des Näherungswertes $\tilde{I}$ von der exakten Lösung $I$ mit dem Leibniz-Kriterium abschätzen.
+			
+			Abschätzung:
+			\hfill\Punkte{2 P}
+			\[
+				\left| \tilde{I} - I \right|
+				\leq 	\left| \int_0^1 - \frac{x^3}{4} \right| 
+				= \left|  \left[  - \frac{x^4}{16} \right]_0^1 \right| = \frac{1}{16}
+			\]
+	\end{enumerate}
+}
+
+\end{Aufgabe}
+
+\endinput

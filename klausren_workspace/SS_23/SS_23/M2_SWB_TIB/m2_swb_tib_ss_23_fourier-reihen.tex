@@ -1,0 +1,99 @@
+\begin{Aufgabe}[10]
+	Gegeben ist die periodische Funktion $f$, mit
+	\[
+	f(t) = \e^{t/2} \mbox{ für } t \in [-\pi, \pi), \quad f(t + 2 \, \pi) = f(t) \, .
+	\]
+	\begin{enumerate}
+		\item
+			Skizzieren Sie die Funktion $f$ für $t \in [-\pi, 4 \, \pi]$.
+		\item
+			Bestimmen Sie eine Formel für die komplexen Fourier-Koeffizienten $c_k$ der Funktion $f$, für $k = 0,1,2,3,\ldots$
+		\item
+			Welchen Mittelwert $m$ hat die Funktion $f$?
+		\item
+			An welchen Stellen tritt bei der Funktion $f$ das Gibbsche Phänomen auf?
+			Wie groß sind die Überschwinger?
+	\end{enumerate}
+	
+	\begin{tikzpicture}[xscale=1.0,yscale=1.0]
+		\draw[line width=0.25pt,step=0.5cm,color=lightgray] (-4.0,-6.0) grid(13.5cm,6.0cm);
+		\draw[->,thick] (-3.5, 0.0) -- (13.0, 0.0) node[below=1mm] {$t$};
+		\draw[->,thick] ( 0.0,-5.5) -- ( 0.0,5.5) node[left]  {$f$};
+		\foreach \i in {-5,-4,-3,-2,-1,1,2,3,4,5} {
+			\draw[thick] (0.1,\i) -- (-0.1,\i) node[left] {$\i$};
+		}
+		\draw[thick] (-3.14,0.1) -- (-3.14,-0.1) node[below] {$\vphantom{2}-\pi$};
+		\draw[thick] (  3.14,0.1) -- (  3.14,-0.1) node[below] {$\vphantom{2}\pi$};
+		\draw[thick] (  6.28,0.1) -- (  6.28,-0.1) node[below] {$2 \, \pi$};
+		\draw[thick] (  9.42,0.1) -- (  9.42,-0.1) node[below] {$3 \, \pi$};
+		\draw[thick] (12.56,0.1) -- ( 12.56,-0.1) node[below] {$4 \, \pi$};
+		\ifLoesung
+		\draw[ultra thick, smooth, domain=-3.14:3.14,color=red] plot (\x,{exp(0.5*\x)}) ;
+		\draw[ultra thick, smooth, domain=3.14:9.42,color=red] plot (\x,{exp(0.5*(\x-6.28))}) ;
+		\draw[ultra thick, smooth, domain=9.42:12.56,color=red] plot (\x,{exp(0.5*(\x-12.56))}) ;
+		\fi
+	\end{tikzpicture}
+	
+	\Loesung{}{
+		\begin{enumerate}[series=fourierreihen_loesung]
+			\item
+			Skizze:
+			\hfill\Punkte{2 P}
+		\end{enumerate}
+	}
+	
+	\newpage
+	
+	\Loesung{}{
+		\begin{enumerate}[resume=fourierreihen_loesung]
+			\item
+			Formel:
+			\hfill\Punkte{1 P}
+			\[
+			c_k
+			= \frac{1}{T} \int_{-T/2}^{T/2} f(t) \, \e^{- \mathrm{i} \, k \, \omega \, t}  \mathrm{d} \, t
+			= \frac{1}{2 \, \pi} \int_{-\pi}^{\pi} \e^{t/2}  \e^{- \mathrm{i} \, k \, t}  \mathrm{d} \, t \, .
+			\]
+			Stammfunktion:
+			\hfill\Punkte{2 P}
+			\[
+			c_k
+			= \frac{1}{2 \, \pi} \int_{-\pi}^{\pi} \e^{t/2 - \mathrm{i} \, k \, t}  \mathrm{d} \, t
+			= \frac{1}{2 \, \pi} \int_{-\pi}^{\pi} \e^{\left(1/2 - \mathrm{i} \, k \right) t}  \mathrm{d} \, t
+			= \frac{1}{2 \, \pi} \left[ \frac{ \e^{\left(1/2 - \mathrm{i} \, k \right) t} }{1/2 - \mathrm{i} \, k } \right]_{- \, \pi}^\pi \, .
+			\]
+			Grenzen einsetzen und vereinfachen:
+			\hfill\Punkte{2 P}
+			\[
+			c_k
+			= \frac{ \e^{\left(1/2 - \mathrm{i} \, k \right) \pi} -  \e^{\left(1/2 - \mathrm{i} \, k \right) (- \pi)}}{2 \, \pi \left(1/2 - \mathrm{i} \, k \right)}
+			= \frac{ \e^{\pi / 2- \mathrm{i} \, k \, \pi} - \e^{- \pi / 2 + \mathrm{i} \, k \, \pi}}{\pi - \mathrm{i} \, k \, 2 \, \pi}
+			= \frac{ (-1)^k(\e^{\pi / 2}  - \e^{-\pi / 2} )}{\pi - \mathrm{i} \, k \, 2 \, \pi} \, .
+			\]
+			\item
+			Mittelwert
+			\hfill\Punkte{1 P}
+			\[
+			m
+			= c_0
+			=  \frac{\e^{\pi / 2}  - \e^{-\pi / 2}}{\pi} \approx 1.465 \, .
+			\]
+			\item
+			Gibbsche Phänomen:
+			\hfill\Punkte{1 P}
+			\[
+			t_k = \pi + k \cdot 2 \, \pi, \quad k = 0,1,2,3, \ldots \, .
+			\]
+			Überschwinger:
+			\hfill\Punkte{1 P}
+			\[
+			\pm 0.09 \cdot (\e^{\pi / 2} - \e^{-\pi / 2}) \approx \pm 0. 41 \, .
+			\]
+		\end{enumerate}
+	}
+	
+\end{Aufgabe}
+
+\newpage
+
+\endinput

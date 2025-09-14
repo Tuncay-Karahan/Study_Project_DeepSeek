@@ -1,0 +1,87 @@
+\begin{Aufgabe}[10]% vgl. SS 18
+	Wir betrachten das Anfangswertproblem
+	\[
+		y'(x) \cdot y(x) = \sin(x), \quad y(0) = -1 \, .
+	\]
+	\begin{enumerate}
+		\item
+			Handelt es sich um eine lineare oder um eine nichtlineare Differenzialgleichung?
+		\item
+			Bestimmen Sie die exakte Lösung des Anfangswertproblems.
+		\item
+			Berechnen Sie einen Näherungswert für $y(1)$, indem Sie mit der Schrittweite $h=\displaystyle\frac{1}{2}$ zwei Schritte mit dem Polygonzugverfahren von Euler durchführen.
+		\item
+			Wie groß ist die Abweichung des in Aufgabenteil \textbf{c)} berechneten Näherungswerts von der exakten Lösung?
+	\end{enumerate}
+	
+	\Loesung{}{
+		\begin{enumerate}[series=dgl_erster_ordnung]
+			\item
+			Nichtlineare Differenzialgleichung.
+			\hfill\Punkte{1 P}
+			\item		
+			Separation:
+			\hfill\Punkte{1 P}
+			\[
+				\frac{\mbox{d} \, y}{\mbox{d} \, x} \cdot y = \sin(x)
+				\quad \Longrightarrow \quad
+				\int y \, \mbox{d} \, y = \int \sin(x) \, \mbox{d} \, x
+			\]
+			Integration:
+			\hfill\Punkte{1 P}
+			\[
+				\frac{1}{2} \, y^2 = -\cos(x) + C
+			\]
+			Allgemeine Lösung:
+			\hfill\Punkte{1 P}
+			\[
+				y(x) = \pm \sqrt{2 \, C - 2 \, \cos(x)}
+			\]
+			Anfangswert $y(0) = -1$:
+			\hfill\Punkte{1 P}
+			\[
+				\frac{1}{2} \cdot (-1)^2 = -\cos(0) + C
+				\quad \Longrightarrow \quad
+				C = \frac{3}{2}
+			\]
+			Lösung des Anfangswertproblems:
+			\hfill\Punkte{1 P}
+			\[
+				y(x) = -\sqrt{3 - 2 \, \cos(x)}
+			\]
+			\item
+			1. Schritt mit $x_0=0$ und $y_0 = -1$:
+			\hfill\Punkte{1 P}
+			\[
+				y_1 = y_0 + h \, \frac{\sin(x_0)}{y_0} = -1, \quad x_1 = x_0 + h = \frac{1}{2}
+			\]
+			2. Schritt:
+			\hfill\Punkte{1 P}
+			\[
+				y_2 = y_1 + h \, \frac{\sin(x_1)}{y_1} = -1 - \frac{1}{2} \sin\left( \frac{1}{2} \right) \approx -1.2397,  \quad x_2 = x_1 + h = 1
+			\]
+		\end{enumerate}
+	}
+	
+	\newpage
+	
+	\Loesung{}{
+		\begin{enumerate}[resume=dgl_erster_ordnung]
+			\item
+			Exakte Lösung:
+			\hfill\Punkte{1 P}
+			\[
+				y(1) = -\sqrt{3 - 2 \, \cos(1)} \approx - 1.3854
+			\]
+			Abweichung:
+			\hfill\Punkte{1 P}
+			\[
+				\left| y(1) - y_2 \right| \approx \left| - 1.3854 + 1.2397 \right| \approx 0.1457
+			\]
+		\end{enumerate}	
+		}
+\end{Aufgabe}
+
+\newpage
+
+\endinput

@@ -1,0 +1,18 @@
+{
+  "model_openai": "gpt-5-mini",
+  "temperature": 0.1,
+  "response_format": {
+    "type": "json_object"
+  },
+  
+  "model_deepseek": "deepseek-r1:32b",
+  "options": { 
+    "temperature": 0.1,
+    "top_p": 0.9,
+    "repeat_penalty": 1.1,
+    "num_predict": 320,
+    "format": "json",
+    "stop": ["```"]
+  },
+  "think": false
+}

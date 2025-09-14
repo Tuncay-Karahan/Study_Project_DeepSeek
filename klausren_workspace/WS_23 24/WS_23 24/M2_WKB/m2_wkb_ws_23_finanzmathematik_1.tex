@@ -1,0 +1,56 @@
+\begin{Aufgabe}[8] 
+	Die Geschwister Fin und Ans haben ein Baugrundstück geerbt und planen darauf ein Gebäude mit 10 Mietwohnungen errichten zu lassen. Sie können zusammen ein Eigenkapital von 500.000 Euro aufbringen, der Rest muss über einen Kredit finanziert werden.
+	\begin{enumerate}
+		\item Aufgrund stark gestiegener Kreditzinsen könnte der Bau von Sozialwohnungen eine attraktive Möglichkeit darstellen. Durch staatliche Förderung liegt der Zinssatz hier bei $1.2 \%$ p.a. bei unterjähriger, genauer monatlicher Verzinsung, d.h. der Zinssatz je Monat liegt bei $0.1 \%$. \\
+		Der Bau der $10$ Wohnungen soll 1.5 Millionen Euro kosten, es muss also 1 Million Euro Kredit aufgenommen werden.
+		\begin{itemize}
+			\item Bestimmen Sie den effektiven Jahreszins (auf zwei Nachkommastellen genau).
+			\item Welche Rate R muss jeweils zum Ende des Monats gezahlt werden, damit der Kredit nach genau 20 Jahren (also 240 Monaten) getilgt ist? \\
+			Hinweis: Sie können z.B. die Zahlung der 240 Raten als konstante Zahlungsfolge betrachten, deren Barwert oder Endwert mit einem geeigneten Wert gleich zu setzen ist.
+			\item Welche monatliche Kaltmiete muss für jede der 10 Wohnungen erhoben werden, damit aus den Mieteinnahmen die Kreditraten R beglichen werden können? Dabei sollen zusätzliche Kosten für Instandhaltung oder Steuern vernachlässigt werden.
+		\end{itemize}
+		\item Werden Wohnungen für den freien Markt gebaut, sind die Zinsen wesentlich höher. Sie liegen bei $4.8\%$ p.a. bei monatlicher Verzinsung. Zusätzlich werden höhere Baukosten von 2 Millionen Euro (also ein Kredit von 1.5 Millionen Euro) eingeplant, um einen erhöhten Wohnkomfort zu erreichen.
+		\begin{itemize}
+			\item Bestimmen Sie den effektiven Jahreszins (auf zwei Nachkommastellen genau).
+			\item Welche Rate R muss jeweils zum Ende des Monats gezahlt werden, damit der Kredit nach genau 20 Jahren getilgt ist?
+			\item Welche monatliche Kaltmiete muss für jede der 10 Wohnungen erhoben werden, damit aus den Mieteinnahmen die Kreditraten R beglichen werden können?
+		\end{itemize} 
+	\end{enumerate}
+\end{Aufgabe}
+\Loesung{}{
+\textbf{a)}
+effektiver Jahreszins $p^*=100\cdot((1+\frac{1.2}{12\cdot 100})^{12}-1)\approx 1.21$
+\hfill\Punkte{1 P}\\\\
+Der Barwert der Zahlung aller 240 Raten R liegt bei 1 Million Euro. Deswegen kann man setzen \hfill\Punkte{2 P}
+\[R\cdot (\frac{1}{1.001}+\frac{1}{1.001^2}+...+\frac{1}{1.001^{240}})=1000000\]
+Multiplikation der Gleichung mit $1.001^{240}$ ergibt
+\[R\cdot (1.001^{239}+1.001^{238}+...+1)=1000000\cdot 1.001^{240}\]
+Die Anwendung der geometrischen Summenformel führt zu 
+\[R\cdot \frac{1.001^{240}-1}{1.001-1}=1000000\cdot 1.001^{240}\]
+Damit ist \[R= 10000\cdot \frac{1.001^{240}}{1.001^{240}-1}\approx 4688.72 (\text{Euro)}\]
+
+}
+\newpage
+\Loesung{}{
+
+monatliche Kaltmiete: \hfill\Punkte{1 P}
+\[4688.72:10\approx 468.88 \text{\;(Euro)}\]
+Hier muss aufgerundet werden.\\
+\textbf{b)}
+effektiver Jahreszins $p^*=100\cdot((1+\frac{4.8}{12\cdot 100})^{12}-1)\approx 4.91$ \hfill\Punkte{1 P}\\\\
+Der Barwert der Zahlung aller 240 Raten R liegt bei 1.5 Million Euro. Deswegen kann man (bei monatlichen Zinsen von $0.4\%$) setzen \hfill\Punkte{2 P}
+\[R\cdot (\frac{1}{1.004}+\frac{1}{1.004^2}+...+\frac{1}{1.004^{240}})=1500000\]
+Die geometrische Summenformel und Umstellen nach R ergibt
+\[R= 1500000\cdot 0.004\cdot \frac{1.004^{240}}{1.004^{240}-1}\approx 9734.36 \text{\;(Euro)}\]
+monatliche Kaltmiete: \hfill\Punkte{1 P}
+\[9734.36:10\approx 973.44\text{\;(Euro)}\]
+}
+\ifLoesung
+\else
+\newpage
+\Loesung{}{}
+\fi
+
+\newpage
+
+\endinput

@@ -1,0 +1,73 @@
+\begin{Aufgabe}[8]% vgl. WS 17/18
+	Gegeben ist die Funktion $f$ mit 
+	\[
+		f(x)=\e^x \, \ln(1+x) \, .
+	\]
+	\begin{enumerate}
+		\item
+			Geben Sie die Potenzreihen der Funktionen $g$ und $h$ an der Entwicklungstelle $x_0 = 0$ an, mit
+			\[
+				g(x)=\e^x, \quad h(x) =\ln(1+x) \, .
+			\]
+			Welche Konvergenzradien haben diese Potenzreihen?
+		\item
+			Bestimmen Sie das Taylor-Polynom $T_3$ von Grad $3$ der Funktion $f$ an der Entwicklungstelle $x_0 = 0$ mithilfe der Potenzreihen der Funktionen $g$ und $h$ aus Aufgabenteil \textbf{a)}.
+		\item
+			Berechnen Sie einen Näherungswert $\tilde{I}$ für das bestimmte Integral
+			\[
+				I = \int_0^1 f(x) \, \mbox{d} \, x \approx \tilde{I} = \int_0^1 T_3(x) \, \mbox{d} \, x
+			\]
+			mithilfe des Taylor-Polynoms $T_3$ aus Aufgabenteil \textbf{b)}.
+	\end{enumerate}
+	%
+	%
+	%
+	\Loesung{}{
+		\begin{enumerate}[series=potenzreihen_loesung]
+			\item
+				Potenzreihe der $\e$-Funktion:
+				\hfill\Punkte{1 P}
+				\[
+					\e^x = \sum_{k=0}^{\infty}\frac{1}{k!}x^k = 1 + x + \frac{x^2}{2} + \frac{x^3}{6} \pm \ldots
+				\]
+				Potenzreihe des Logarithmus:
+				\hfill\Punkte{1 P}
+				\[
+					\ln(1 + x) = \sum_{k=1}^{\infty}\frac{(-1)^{k-1}}{k}x^k = x-\frac{x^2}{2}+\frac{x^3}{3} \pm \ldots
+				\]
+				Die Potenzreihe der $\e$-Funktion hat den Konvergenzradius $\infty$ und die Potenzreihe der $\ln$-Funktion hat den Konvergenzradius $1$. 
+				\hfill\Punkte{1 P}
+			\item
+				Cauchy-Produkt:
+				\hfill\Punkte{1 P}
+				\[
+					f(x) = g(x) \cdot h(x) = \left( 1 + x + \frac{x^2}{2} + \frac{x^3}{6} \pm \ldots \right) \left( x-\frac{x^2}{2}+\frac{x^3}{3}  \pm \ldots \right)
+				\]
+				Taylor-Polynom $T_3$ von Grad $3$:
+				\hfill\Punkte{2 P}
+				\[
+					T_3(x) = 1 \cdot \left( x-\frac{x^2}{2}+\frac{x^3}{3} \right) + x \cdot \left( x-\frac{x^2}{2} \right) + \frac{x^2}{2} \cdot x = x + \frac{x^2}{2} + \frac{x^3}{3} 
+				\]
+			\item
+				Näherungswert:
+				\hfill\Punkte{2 P}
+				\[
+					\tilde{I} = \int_0^1 T_3(x) \, \mbox{d} \, x =  \int_0^1 x + \frac{x^2}{2} + \frac{x^3}{3} \, \mbox{d} \, x 
+					= \left[ \frac{x^2}{2} + \frac{x^3}{6} + \frac{x^4}{12} \right]_0^1
+					= \frac{1}{2} + \frac{1}{6} + \frac{1}{12} = \frac{9}{12}  = \frac{3}{4} 
+				\]
+		\end{enumerate}
+	}
+	
+	\newpage
+
+		\ifLoesung
+		\else
+		\Loesung{}{}
+		\fi
+		
+\end{Aufgabe}
+
+\newpage
+
+\endinput

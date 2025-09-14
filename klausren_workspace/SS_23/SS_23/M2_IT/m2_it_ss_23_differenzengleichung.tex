@@ -1,0 +1,136 @@
+\begin{Aufgabe}[8] % vgl. SS 16, gleiche Matrix als DGL-System
+	Gegeben ist das Differenzengleichungssystem
+	\[
+	\begin{array}{rcrcr}
+		x_{k+1} & = & -2 \, x_k & + & 3 \, y_k,\\[1ex]
+		y_{k+1} & = &	2 \, x_k & + & 3 \, y_k,\\
+	\end{array}
+	\quad k = 0,1,2,\ldots
+	\]
+	\begin{enumerate}
+		\item
+			Berechnen Sie die allgemeine Lösung des Differenzengleichungssystems.
+		\item
+			Ist das Differenzengleichungssystem asymptotisch stabil?
+	\end{enumerate}
+	
+	\Loesung{}{
+		\begin{enumerate}
+			\item
+			Vektor-Matrix-Form:
+			\[
+			\left(
+			\begin{array}{l}
+				x_{k+1}\\[1ex]
+				y_{k+1}\\
+			\end{array}
+			\right)
+			=
+			\left(
+			\begin{array}{rr}
+				-2 & 3\\[1ex]
+				  2 & 3\\
+			\end{array}
+			\right)
+			\left(
+			\begin{array}{l}
+				x_{k}\\[1ex]
+				y_{k}\\
+			\end{array}
+			\right)
+			\hfill \Punkte{1 P} 
+			\]
+			Charakteristische Gleichung und Eigenwerte:
+			\[
+			\left|
+			\begin{array}{cc}
+				-2 - \lambda &                   3\\[1ex]
+				                   2 & 3 - \lambda \\
+			\end{array}
+			\right|
+			= \lambda^2 - \lambda - 12 = 0
+			\quad \Longrightarrow \quad
+			\lambda_1 = 4, \, \lambda_2 = -3 
+			\hfill \Punkte{3 P} 
+			\]		
+			Eigenvektor für $\lambda_1 = 4$:
+			\[
+			\left(
+			\begin{array}{rr}
+				-6 &  3 \\[1ex]
+				  2 & -1 \\
+			\end{array}
+			\right)
+			\, \mathbf{v} = \mathbf{0}
+			\quad \Longrightarrow \quad
+			\mathbf{v} =
+			\left(
+			\begin{array}{r}
+				\hphantom{-}1\\
+				2\\
+			\end{array}
+			\right)  
+			\hfill \Punkte{1 P} 
+			\]  
+			Eigenvektor für $\lambda_2 = -3$:
+			\[
+			\left(
+			\begin{array}{rr}
+				\hphantom{-}1 & \hphantom{-}3\\[1ex]
+				2 & 6\\
+			\end{array}
+			\right)
+			\, \mathbf{v} = \mathbf{0}
+			\quad \Longrightarrow \quad
+			\mathbf{v} =
+			\left(
+			\begin{array}{r}
+				 3\\
+				-1\\
+			\end{array}
+			\right)  
+			\hfill \Punkte{1 P} 
+			\]
+			Allgemeine Lösung
+			\[
+			\left(
+			\begin{array}{l}
+				x_{k}\\
+				y_{k}\\
+			\end{array}
+			\right)
+			=
+			C_1 \, 4^k
+			\left(
+			\begin{array}{r}
+				\hphantom{-}1\\
+									2\\
+			\end{array}
+			\right)   
+			+ C_2 \, \left( -3 \right)^k
+			\left(
+			\begin{array}{r}
+				3\\
+				-1\\
+			\end{array}
+			\right)   
+			\hfill \Punkte{1 P} 
+			\]
+			\item
+			Die Beträge der Eigenwerte sind nicht kleiner als $1$.
+			Somit ist das Differenzengleichungssystem nicht asymptotisch stabil.
+			\hfill \Punkte{1 P} 
+		\end{enumerate}
+	}
+	
+	\ifLoesung
+	\else
+	\newpage
+	\Loesung{}{}
+	\fi
+	
+\end{Aufgabe} 
+
+\newpage
+
+\endinput
