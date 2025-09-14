@@ -1,4 +1,4 @@
-# Studienprojekt – LLM-Pipeline für Mathe-Klausuren
+# Studienprojekt – Automatisierter Leistungsvergleich von DeepSeek und ChatGPT bei mathematischen Prüfungsaufgaben
 
 Dieses Projekt besteht aus drei Hauptskripten, die nacheinander ausgeführt werden. Sie bilden eine Pipeline:
 
