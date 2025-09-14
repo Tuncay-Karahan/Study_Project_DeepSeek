@@ -1,5 +1,4 @@
-# Skripte: Klausur-Pipeline
-
+# Skripte: Automatisierter Leistungsvergleich von DeepSeek und ChatGPT bei mathematischen Prüfungsaufgaben
 Dieses Verzeichnis enthält die drei Hauptskripte, die nacheinander ausgeführt werden:
 
 ```
