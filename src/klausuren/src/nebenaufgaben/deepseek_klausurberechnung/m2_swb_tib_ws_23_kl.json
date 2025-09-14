@@ -1,0 +1,112 @@
+[
+  {
+    "id": "aufgabe_1a",
+    "frage": "Ordnen Sie den Differentialgleichungen die Richtungsfelder zu: (A) y' = x/y, (B) y' = y/x, (C) y' = -x/y, (D) y' = -y/x.",
+    "loesungsschritte": [
+      "Die Richtungsfelder zeigen die Steigung y' in jedem Punkt (x, y).",
+      "z.B. y' = y/x zeigt senkrechte Symmetrie, y' = -y/x hat symmetrisches negatives Verhalten.",
+      "Nach Auswertung aller Richtungen ergibt sich: C ↔ (C), D ↔ (D), B ↔ (B), A ↔ (A)."
+    ],
+    "basetruth": "(C) ↔ C, (D) ↔ D, (B) ↔ B, (A) ↔ A",
+    "keywords": ["Richtungsfeld", "Differentialgleichung"]
+  },
+  {
+    "id": "aufgabe_1b",
+    "frage": "Bestimmen Sie die allgemeine Lösung der Differentialgleichung y'(x) = 3x²·y.",
+    "loesungsschritte": [
+      "Trennung der Variablen: dy/y = 3x² dx",
+      "Integration: ∫(1/y) dy = ∫3x² dx ⇒ ln|y| = x³ + C",
+      "Umformen: y = C·e^(x³)"
+    ],
+    "basetruth": "y(x) = C·e^(x³)",
+    "keywords": ["Differentialgleichung", "Trennung der Variablen", "Allgemeine Lösung"]
+  },
+  {
+    "id": "aufgabe_1c",
+    "frage": "Berechnen Sie mit dem Euler-Polygonzugverfahren einen Näherungswert für y(1.2), gegeben y'(x) = y / (1 + x²), y(1) = 3, h = 0.2.",
+    "loesungsschritte": [
+      "Euler-Verfahren: y₁ = y₀ + h·f(x₀, y₀)",
+      "x₁ = x₀ + h = 1 + 0.2 = 1.2",
+      "y₁ = 3 + 0.2 × 3 / (1 + 1²) = 3.3"
+    ],
+    "basetruth": "y(1.2) ≈ 3.3",
+    "keywords": ["Euler-Polygonzugerfahren", "Euler-Verfahren", "Differentialgleichung", "Näherungswert"]
+  },
+  {
+    "id": "aufgabe_1d",
+    "frage": "Beurteilen Sie die Aussage von ChatGPT zu einem linearen Differenzengleichungssystem bzgl. asymptotischer Stabilität.",
+    "loesungsschritte": [
+      "Gegebenes System: Matrix A mit Eigenwerten λ₁ = 1, λ₂ = 0.4",
+      "Asymptotische Stabilität erfordert: alle |λ| < 1",
+      "Da λ₁ = 1, ist das System nicht asymptotisch stabil",
+      "Beispiel: x₀ = 1, y₀ = 1 ergibt stationären Zustand, aber keine Konvergenz gegen 0"
+    ],
+    "basetruth": "Das System ist nicht asymptotisch stabil, weil λ₁ = 1.",
+    "keywords": ["asymptotisch stabil", "Eigenwerte", "Differenzengleichung", "Differenzengleichungssystem"]
+  },
+  {
+    "id": "aufgabe_2",
+    "frage": "Bestimmen Sie die allgemeine reelle Lösung der Differentialgleichung y''(x) + 4y(x) = 8cos(2x) − 4sin(2x).",
+    "loesungsschritte": [
+      "Löse homogene Gleichung: λ² + 4 = 0 ⇒ λ = ±2i",
+      "Allgemeine Lösung homogener Teil: yh(x) = C1·cos(2x) + C2·sin(2x)",
+      "Ansatz für partikuläre Lösung wegen Resonanz: yp(x) = x(A·cos(2x) + B·sin(2x))",
+      "Ableitungen berechnen und in DGL einsetzen",
+      "Koeffizientenvergleich ergibt: A = 1, B = 2",
+      "Gesamtlösung: y(x) = yh(x) + yp(x)"
+    ],
+    "basetruth": "y(x) = C1·cos(2x) + C2·sin(2x) + x·(cos(2x) + 2·sin(2x))",
+    "keywords": ["Differentialgleichung", "Resonanz", "Allgemeine Lösung"]
+  },
+  {
+    "id": "aufgabe_3",
+    "frage": "Bestimmen Sie die allgemeine reelle Lösung des Systems: ẋ₁ = −2x₁ + 3x₂ + 6e^(−2t), ẋ₂ = 2x₁ + 3x₂.",
+    "loesungsschritte": [
+      "System in Matrixform: ẋ = A·x + b(t)",
+      "Berechne Eigenwerte von A: λ1 = 4, λ2 = -3",
+      "Bestimme Eigenvektoren v1 = [1,2], v2 = [3,−1]",
+      "Löse homogene Gleichung: x_h(t) = C1·e^(4t)·v1 + C2·e^(−3t)·v2",
+      "Ansatz partikuläre Lösung: x_p = e^(−2t)·[A, B]",
+      "Einsetzen in System und Koeffizientenvergleich ⇒ A = 5, B = −2",
+      "Gesamtlösung: x = x_h + x_p"
+    ],
+    "basetruth": "x(t) = C1·e^(4t)·[1,2] + C2·e^(−3t)·[3,−1] + e^(−2t)·[5,−2]",
+    "keywords": ["Differentialgleichung", "Allgemeine Lösung", "Differentialgleichungssystem"]
+  },
+  {
+    "id": "aufgabe_4",
+    "frage": "Gegeben ist die Differenzengleichung xₖ₊₁ = 1.05xₖ − 1 mit x₀ = 10. Beantworte: (a) x1 und x2, (b) Lösung, (c) Wann ist xₖ < 0?",
+    "loesungsschritte": [
+      "(a) Einsetzen: x1 = 1.05·10 − 1 = 9.5, x2 = 1.05·9.5 − 1 = 8.975",
+      "(b) Homogene Lösung: x_h = C·1.05^k; partikuläre Lösung: x_p = 20",
+      "Gesamtlösung: x_k = −10·1.05^k + 20",
+      "(c) x_k < 0 ⇔ 1.05^k > 2 ⇒ k > ln(2)/ln(1.05) ≈ 14.2 ⇒ ab k = 15 negativ"
+    ],
+    "basetruth": "x₁ = 9.5, x₂ = 8.975; x_k = −10·1.05^k + 20; negativ ab k = 15",
+    "keywords": ["Differenzengleichung", "Folge", "Allgemeine Lösung"]
+  },
+  {
+    "id": "aufgabe_5",
+    "frage": "Gegeben ist f(x) = e^(−x²). (a) Potenzreihe um x=0, (b) Integral [0,1] über f(x) mittels Reihenentwicklung bis Ordnung 4, (c) f⁽ⁿ⁾(0)?",
+    "loesungsschritte": [
+      "(a) Reihenentwicklung: f(x) = ∑ (−1)^k x^{2k} / k! ⇒ konvergiert für alle x",
+      "(b) Integriere bis x⁴-Term: ∫₀¹ (1 − x² + x⁴/2) dx = 23/30 ≈ 0.7667",
+      "Abschätzung Fehler: ≤ ∫₀¹ |−x⁶/6| dx = 1/42",
+      "(c) f⁽ⁿ⁾(0): für gerade n: f⁽ⁿ⁾(0) = (−1)^{n/2}·n! / (n/2)!, ungerade: 0"
+    ],
+    "basetruth": "I ≈ 23/30, Fehler ≤ 1/42; f⁽ⁿ⁾(0) ≠ 0 nur bei geradem n",
+    "keywords": ["Potenzreihe", "Integral", "Leibniz-Kriterium", "Ableitung", "Näherungswert"]
+  },
+  {
+    "id": "aufgabe_6",
+    "frage": "Gegeben ist f(t) = t² auf [−2,2), periodisch mit f(t+4)=f(t). (a) Skizze, (b) Mittelwert, (c) Gibbs-Phänomen?, (d) Aussagen zu Fourier-Koeffizienten.",
+    "loesungsschritte": [
+      "(a) Skizze zeigt parabolisches Verhalten, wiederholt sich alle 4 Einheiten",
+      "(b) Mittelwert m = (1/4)·∫₋2² t² dt = 4/3",
+      "(c) Funktion ist stetig ⇒ kein Gibbs-Phänomen",
+      "(d) Aussagen: ak ≠ 0 ⇒ falsch; bk = 0 ⇒ wahr; ck reell ⇒ wahr; ck imaginär ⇒ falsch"
+    ],
+    "basetruth": "m = 4/3; kein Gibbs-Phänomen; nur bk = 0 und ck reell sind richtig",
+    "keywords": ["Fourier-Reihe", "Periodische Funktion", "Mittelwert", "Gibbsche Phänomen", "Fourier-Koeffizienten"]
+  }
+]
